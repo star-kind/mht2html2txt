@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mht2html2txt.allstar.mapper.AccountMapper">
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap"
+		type="com.mht2html2txt.allstar.bean.Account">
+		<id column="id" property="id" />
+		<result column="nickname" property="nickname" />
+		<result column="mailbox" property="mailbox" />
+		<result column="password" property="password" />
+		<result column="salt" property="salt" />
+		<result column="reg_time" property="regTime" />
+	</resultMap>
+
+	<!-- 通用列 -->
+	<sql id="Base_Column_List">
+		id,
+		nickname,
+		mailbox,
+		password,
+		salt,
+		reg_time
+	</sql>
+
+	<!-- 通用列 1 -->
+	<sql id="Base_Column_List_1">
+		nickname,
+		mailbox,
+		password,
+		salt,
+		reg_time
+	</sql>
+
+	<select id="selectByID" parameterType="java.lang.Integer"
+		resultType="com.mht2html2txt.allstar.bean.Account">
+		SELECT
+		<include refid="Base_Column_List"></include>
+		FROM
+		t_account
+		WHERE
+		id
+		=
+		<if test="id!=null">
+			#{id}
+		</if>
+	</select>
+
+	<select id="selectByMailbox"
+		resultType="com.mht2html2txt.allstar.bean.Account">
+		SELECT
+		<include refid="Base_Column_List"></include>
+		FROM
+		t_account
+		WHERE
+		mailbox
+		=
+		<if test="mailbox!=null">
+			#{mailbox}
+		</if>
+	</select>
+
+	<select id="selectColEqVal" statementType="STATEMENT"
+		resultType="com.mht2html2txt.allstar.bean.Account">
+		SELECT
+		<include refid="Base_Column_List"></include>
+		FROM
+		t_account
+		WHERE
+		<if test="colName!=null">
+			${colName}
+		</if>
+		=
+		<if test="val!=null">
+			'${val}'
+		</if>
+	</select>
+
+	<update id="createTblAccount">
+		CREATE TABLE t_account (
+		id INTEGER NOT NULL GENERATED
+		ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+		nickname
+		VARCHAR(56)
+		NOT NULL,
+		mailbox VARCHAR(255)
+		NOT NULL UNIQUE,
+		password
+		VARCHAR(255) NOT
+		NULL,
+		salt VARCHAR(255) NOT
+		NULL,
+		reg_time TIMESTAMP NOT
+		NULL,
+		PRIMARY KEY
+		(id)
+		)
+	</update>
+
+	<update id="updateByID"
+		parameterType="com.mht2html2txt.allstar.bean.Account">
+		update t_account
+		<set>
+			<if test="account.nickname!=null">
+				nickname=#{account.nickname},
+			</if>
+			<if test="account.password!=null">
+				password=#{account.password},
+			</if>
+			<if test="account.salt!=null">
+				salt=#{account.salt},
+			</if>
+			<if test="account.mailbox!=null">
+				mailbox=#{account.mailbox},
+			</if>
+			<if test="account.regTime!=null">
+				reg_time=#{account.regTime}
+			</if>
+		</set>
+		WHERE
+		<if test="id!=null">
+			id=#{id}
+		</if>
+	</update>
+
+	<select id="selectAllAccounts" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"></include>
+		FROM
+		t_account
+	</select>
+
+	<delete id="delTblAccount">
+		DROP TABLE t_account
+	</delete>
+
+	<select id="count">
+		select count(1) from sys_user
+	</select>
+
+	<insert id="saveAccount">
+		INSERT INTO
+		t_account
+		(
+		<include refid="Base_Column_List_1"></include>
+		)
+		VALUES
+		(
+		#{nickname},
+		#{mailbox},
+		#{password},
+		#{salt},
+		#{regTime}
+		)
+	</insert>
+</mapper>

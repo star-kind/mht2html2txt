@@ -1,0 +1,441 @@
+<html>
+<meta charset="UTF-8">
+<head>
+<!--  -->
+<script type="text/javascript"
+	src="../../static/JavaScript/Jquery/jquery-3.2.1.min.js"></script>
+<!--  -->
+<script type="text/javascript"
+	src="../../static/JavaScript/BootStrap/bootstrap.js"></script>
+<script type="text/javascript"
+	src="../../static/JavaScript/BootStrap/bootstrap.min.js"></script>
+<!--  -->
+<link rel="stylesheet"
+	href="../../static/CSS/BootStrap/bootstrap.min.css">
+<link rel="stylesheet" href="../../static/CSS/BootStrap/bootstrap.css">
+<link rel="stylesheet"
+	href="../../static/CSS/BootStrap/bootstrap-theme.css">
+<link rel="stylesheet"
+	href="../../static/CSS/BootStrap/bootstrap-theme.min.css">
+<!--  -->
+<script type="text/javascript"
+	src="../../static/JavaScript/LayUIJS/layui.js"></script>
+<script type="text/javascript"
+	src="../../static/JavaScript/LayUIJS/layui.all.js"></script>
+<script type="text/javascript"
+	src="../../static/JavaScript/LayUIJS/layer.js"></script>
+<!--  -->
+<link rel="stylesheet" href="../../static/CSS/LayUiCSS/css/layui.css">
+<link rel="stylesheet"
+	href="../../static/CSS/LayUiCSS/css/modules/layer/default/layer.css">
+<link rel="stylesheet"
+	href="../../static/CSS/LayUiCSS/css/layui.mobile.css">
+<link rel="stylesheet"
+	href="../../static/CSS/LayUiCSS/css/modules/code.css">
+<link rel="stylesheet"
+	href="../../static/CSS/LayUiCSS/css/modules/laydate/default/laydate.css">
+<!--  -->
+<script type="text/javascript" src="../../static/JavaScript/Vue/vue.js"></script>
+<script type="text/javascript"
+	src="../../static/JavaScript/Vue/vue.min.js"></script>
+<!--  -->
+<script type="text/javascript"
+	src="../../static/JavaScript/Axios/axios.min.js"></script>
+<!--  -->
+<link rel="stylesheet"
+	href="../../static/CSS/Mine/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="../../static/CSS/Mine/reg.css">
+<link rel="stylesheet" href="../../static/CSS/Mine/adminia.css">
+<link rel="stylesheet" href="../../static/CSS/Mine/font-awesome.css">
+<link rel="stylesheet"
+	href="../../static/CSS/Mine/adminia-responsive.css">
+<!--  -->
+<script type="text/javascript"
+	src="../../static/JavaScript/MineJS/GetFormatTime.js"></script>
+<title>个人后台管理</title>
+</head>
+<body>
+	<div class="ctrl">
+		<!-- navbar-static-top样式：设置静态导航栏 -->
+		<div class="container" id="header_as_0">
+			<nav class="navbar navbar-default navbar-static-top "
+				role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" :href="urlVal.home"> mht2txt 转换系统 </a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<!-- <li><a :href="urlVal.reg">{{urlTags.reg}}</a></li> -->
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<!--  -->
+		<!--  -->
+		<div class="main_as">
+			<!--  -->
+			<div class="container">
+				<div class="row">
+					<div class="span3">
+						<div class="account-container">
+							<div class="account-avatar">
+								<img :src="headspot" alt="" class="thumbnail">
+							</div>
+							<!-- /account-avatar -->
+							<div class="account-details">
+								<span class="account-name">Rod Howard</span> <span
+									class="account-role">Administrator</span> <span
+									class="account-actions"> <a href="javascript:;">Profile</a>
+									| <a href="javascript:;">Edit Settings</a>
+								</span>
+							</div>
+							<!-- /account-details -->
+						</div>
+						<!-- /account-container -->
+						<hr>
+						<ul id="main-nav" class="nav nav-tabs nav-stacked">
+							<li><a class="address_order" v-on:click="toggleRight(0)">
+									<i class="icon-home"></i> 总务
+							</a></li>
+							<li><a class="address_order" v-on:click="toggleRight(1)">
+									<i class="icon-pushpin"></i> 简单笔记
+							</a></li>
+							<li><a class="address_order" v-on:click="toggleRight(2)">
+									<i class="icon-th-list"></i> 更换头像
+							</a></li>
+							<!--  -->
+							<li class="address_order"><a class="address_order"
+								v-on:click="toggleRight(3)"> <i class="icon-th-large"></i>
+									待办事项 <span class="label label-warning pull-right"
+									id="label_num">5</span>
+							</a></li>
+							<!--  -->
+							<li><a class="address_order" v-on:click="toggleRight(4)">
+									<i class="icon-signal"></i> 主业务 壹
+							</a></li>
+							<li><a class="address_order" v-on:click="toggleRight(5)">
+									<i class="icon-user"></i> 修改资料及密码
+							</a></li>
+							<li><a class="address_order" v-on:click="toggleRight(6)">
+									<i class="icon-lock"></i> 重新登录
+							</a></li>
+						</ul>
+						<hr>
+						<div class="sidebar-extra">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+								sed do eiusmod tempor incididunt ut labore et dolore magna
+								aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+						</div>
+						<!-- .sidebar-extra -->
+						<br>
+					</div>
+					<!-- /span3 -->
+					<!-- area_02_div begin -->
+					<div class="area_02_div" ref="area02">
+						<div class="sw" id="switch_part_0">
+							<b>000</b>
+						</div>
+						<div class="sw" id="switch_part_1">
+							<b>111</b>
+						</div>
+						<div class="sw" id="switch_part_2">
+							<b>222</b>
+						</div>
+						<div class="sw" id="switch_part_3">
+							<b>333</b>
+						</div>
+						<div class="sw" id="switch_part_4">
+							<b>444</b>
+						</div>
+						<div class="sw" id="switch_part_5">
+							<!-- <b>555</b> -->
+							<!--  -->
+							<div class="span9" id="part_5">
+								<h1 class="page-title">
+									<i class="icon-th-large"></i> User Account
+								</h1>
+								<div class="row">
+									<div class="span9">
+										<div class="widget">
+											<div class="widget-header">
+												<h3>Basic Information</h3>
+											</div>
+											<!-- /widget-header -->
+											<div class="widget-content">
+												<div class="tabbable">
+													<ul class="nav nav-tabs">
+														<li class="active"><a href="#1" data-toggle="tab">Profile</a>
+														</li>
+														<li class=""><a href="#2" data-toggle="tab">Settings</a></li>
+													</ul>
+													<br>
+													<div class="tab-content">
+														<div class="tab-pane active" id="1">
+															<form id="edit-profile" class="form-horizontal">
+																<fieldset>
+																	<div class="control-group">
+																		<label class="control-label" for="username">Username</label>
+																		<div class="controls">
+																			<input type="text" class="input-medium disabled"
+																				id="username" value="goideate">
+																			<p class="help-block">Your username is for
+																				logging in and cannot be changed.</p>
+																		</div>
+																		<!-- /controls -->
+																	</div>
+																	<!-- /control-group -->
+																	<div class="control-group">
+																		<label class="control-label" for="firstname">First
+																			Name</label>
+																		<div class="controls">
+																			<input type="text" class="input-medium"
+																				id="firstname" value="Rod">
+																		</div>
+																		<!-- /controls -->
+																	</div>
+																	<!-- /control-group -->
+																	<div class="control-group">
+																		<label class="control-label" for="lastname">Last
+																			Name</label>
+																		<div class="controls">
+																			<input type="text" class="input-medium" id="lastname"
+																				value="Howard">
+																		</div>
+																		<!-- /controls -->
+																	</div>
+																	<!-- /control-group -->
+																	<div class="control-group">
+																		<label class="control-label" for="email">Email
+																			Address</label>
+																		<div class="controls">
+																			<input type="text" class="input-large" id="email"
+																				value="rod.howard@example.com">
+																		</div>
+																		<!-- /controls -->
+																	</div>
+																	<!-- /control-group -->
+																	<br> <br>
+																	<div class="control-group">
+																		<label class="control-label" for="password1">Password</label>
+																		<div class="controls">
+																			<input type="password" class="input-medium"
+																				id="password1" value="password">
+																		</div>
+																		<!-- /controls -->
+																	</div>
+																	<!-- /control-group -->
+																	<div class="control-group">
+																		<label class="control-label" for="password2">Confirm</label>
+																		<div class="controls">
+																			<input type="password" class="input-medium"
+																				id="password2" value="password">
+																		</div>
+																		<!-- /controls -->
+																	</div>
+																	<!-- /control-group -->
+																	<br>
+																	<div class="form-actions">
+																		<button type="submit" class="btn btn-primary">Save</button>
+																		<button class="btn">Cancel</button>
+																	</div>
+																	<!-- /form-actions -->
+																</fieldset>
+															</form>
+														</div>
+														<div class="tab-pane" id="2">
+															<form id="edit-profile2" class="form-horizontal">
+																<fieldset>
+																	<div class="control-group">
+																		<label class="control-label" for="accounttype">Account
+																			Type</label>
+																		<div class="controls">
+																			<label class="radio"> <input type="radio"
+																				name="accounttype" value="option1" checked="checked"
+																				id="accounttype"> POP3
+																			</label> <label class="radio"> <input type="radio"
+																				name="accounttype" value="option2"> IMAP
+																			</label>
+																		</div>
+																	</div>
+																	<div class="control-group">
+																		<label class="control-label" for="accountusername">Account
+																			Username</label>
+																		<div class="controls">
+																			<input type="text" class="input-large"
+																				id="accountusername" value="rod.howard@example.com">
+																			<p class="help-block">Leave blank to use your
+																				profile email address.</p>
+																		</div>
+																	</div>
+																	<div class="control-group">
+																		<label class="control-label" for="emailserver">Email
+																			Server</label>
+																		<div class="controls">
+																			<input type="text" class="input-large"
+																				id="emailserver" value="mail.example.com">
+																		</div>
+																	</div>
+																	<div class="control-group">
+																		<label class="control-label" for="accountpassword">Password</label>
+																		<div class="controls">
+																			<input type="text" class="input-large"
+																				id="accountpassword" value="password">
+																		</div>
+																	</div>
+																	<div class="control-group">
+																		<label class="control-label" for="accountadvanced">Advanced
+																			Settings</label>
+																		<div class="controls">
+																			<label class="checkbox"> <input
+																				type="checkbox" name="accountadvanced"
+																				value="option1" checked="checked"
+																				id="accountadvanced"> User encrypted
+																				connection when accessing this server
+																			</label> <label class="checkbox"> <input
+																				type="checkbox" name="accounttype" value="option2">
+																				Download all message on connection
+																			</label>
+																		</div>
+																	</div>
+																	<br>
+																	<div class="form-actions">
+																		<button type="submit" class="btn btn-primary">Save</button>
+																		<button class="btn">Cancel</button>
+																	</div>
+																</fieldset>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- /widget-content -->
+										</div>
+										<!-- /widget -->
+									</div>
+									<!-- /span9 -->
+								</div>
+								<!-- /row -->
+							</div>
+							<!-- 555 -->
+						</div>
+						<div class="sw" id="switch_part_6">
+							<b>666</b>
+						</div>
+					</div>
+					<!-- area_02_div ending -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!--  -->
+		</div>
+		<!--  -->
+		<!-- 固定到底部的导航栏 -->
+		<div class="container" style="padding: 40px">
+			<nav class="navbar navbar-default navbar-fixed-bottom"
+				role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#my-nav1">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<div id="my-nav1" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a>当前时间: {{nowTime}}</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	new Vue({
+		el : '.ctrl',
+		data : {
+			urlTags : {
+				reg : '注册',
+			},
+			urlVal : {
+				home : '../../TransferController/jumpToAction/2',
+				reg : '../../TransferController/jumpToAction/0'
+			},
+			nowTime : "",
+			/*  */
+			headspot : '../../static/Images/tt.jpg',
+			rightClz : document.getElementsByClassName('sw'),
+		},
+		methods : {
+			/*  */
+			toggleRight : function(order) {
+				console.log('order==>' + order);
+				//for ( let i in this.rightClz) {//使用foreach会报错
+				for (let i = 0; i < this.rightClz.length; i++) {
+					if (order == i) {
+						//document.getElementById('switch_part_' + i).style.display = "block";
+						this.rightClz[i].style.display = "block";
+					} else {
+						//document.getElementById('switch_part_' + i).style.display = "none";
+						this.rightClz[i].style.display = "none";
+					}
+				}
+			},
+			/*  */
+			getsTime : function() {
+				this.nowTime = getFormatTime();
+			},
+		},
+		mounted : function() {
+			console.log(this);
+			this.getsTime();
+		}
+	})
+</script>
+<style type="text/css" scoped>
+.sign_in_data_form {
+	font-size: 22px;
+	height: 230px;
+}
+
+.control-group {
+	margin: 15px 0;
+}
+
+.control_group_input {
+	height: 16%;
+}
+
+.pull-right {
+	transform: translate(-15px, 10px);
+}
+
+.remember-me {
+	font-size: 16px;
+}
+
+#my-nav1 {
+	float: right;
+}
+
+#header_as_0 {
+	padding: 0px;
+	width: 100%;
+}
+
+#label_num {
+	transform: translateY(-1%);
+}
+
+.address_order {
+	cursor: pointer;
+}
+
+.sw {
+	display: none;
+}
+
+#part_5 {
+	transform: translate(33%, -70%);
+}
+</style>

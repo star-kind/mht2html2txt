@@ -1,0 +1,324 @@
+<html>
+<meta charset="UTF-8">
+<head>
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/Jquery/jquery-3.2.1.min.js"></script>
+<!--  -->
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/BootStrap/bootstrap.js"></script>
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/BootStrap/bootstrap.min.js"></script>
+<!--  -->
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/BootStrap/bootstrap.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/BootStrap/bootstrap.min.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/BootStrap/bootstrap-theme.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/BootStrap/bootstrap-theme.min.css">
+<!--  -->
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/LayUIJS/layui.js"></script>
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/LayUIJS/layui.all.js"></script>
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/LayUIJS/layer.js"></script>
+<!--  -->
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/LayUiCSS/css/layui.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/LayUiCSS/css/modules/layer/default/layer.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/LayUiCSS/css/layui.mobile.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/LayUiCSS/css/modules/code.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/LayUiCSS/css/modules/laydate/default/laydate.css">
+<!--  -->
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/Vue/vue.js"></script>
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/Vue/vue.min.js"></script>
+<!--  -->
+<script type="text/javascript"
+	src="/mht2html2txt/static/JavaScript/Axios/axios.min.js"></script>
+<!--  -->
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/Mine/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="/mht2html2txt/static/CSS/Mine/reg.css">
+<link rel="stylesheet" href="/mht2html2txt/static/CSS/Mine/adminia.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/Mine/font-awesome.css">
+<link rel="stylesheet"
+	href="/mht2html2txt/static/CSS/Mine/adminia-responsive.css">
+<title>用户注册</title>
+</head>
+<body>
+	<div class="ctrl">
+		<!-- navbar-static-top样式：设置静态导航栏 -->
+		<div class="container" id="header_as_0">
+			<nav class="navbar navbar-default navbar-static-top "
+				role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" :href="urlVal.home"> mht2txt 转换系统 </a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><a :href="urlVal.login">{{urlTags.login}}</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<!--  -->
+		<div class="main_as">
+			<!--  -->
+			<!--  -->
+			<!--  -->
+			<div class="main_sub">
+				<div id="login-header">
+					<h3>填写资料</h3>
+				</div>
+				<!--  -->
+				<div id="login-content" class="clearfix div_reg">
+					<form class="mine_form" ref="dataForm" :model="dataForm">
+						<fieldset>
+							<div class="control-group">
+								<label class="control-label" for="nickname">Nickname</label>
+								<div class="controls">
+									<input type="text" class="sub_input"
+										v-model="dataForm.nickname" id="nickname" placeholder="请输入昵称"
+										maxlength="12">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="mailbox">Mailbox</label>
+								<div class="controls">
+									<input type="text" class="sub_input" v-model="dataForm.mailbox"
+										id="mailbox" placeholder="请输入邮箱" maxlength="38">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="preparePassword">Password</label>
+								<div class="controls">
+									<input type="password" class="sub_input"
+										v-model="dataForm.preparePassword" id="preparePassword"
+										placeholder="请输入密码" maxlength="16">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="password">Repeat
+									Password</label>
+								<div class="controls">
+									<input type="password" class="sub_input"
+										v-model="dataForm.password" id="password"
+										placeholder="请再次输入密码" maxlength="16">
+								</div>
+							</div>
+						</fieldset>
+
+						<div class="pull-right">
+							<div class="btn-group" id="buttons_c">
+								<button type="button"
+									class="item_button btn btn-primary btn-large"
+									v-on:click="submitReg">提交注册</button>
+								<button type="reset"
+									class="item_button btn-warning btn-large btn">重置</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!--  -->
+			<!--  -->
+			<!--  -->
+		</div>
+		<!-- 固定到底部的导航栏 -->
+		<div class="container" style="padding: 40px">
+			<nav class="navbar navbar-default navbar-fixed-bottom"
+				role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#my-nav1">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<div id="my-nav1" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a>当前时间: {{nowTime}}</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	new Vue({
+		el : '.ctrl',
+		data : {
+			urlTags : {
+				login : '登录',
+			},
+			urlVal : {
+				home : '/mht2html2txt/TransferController/jumpToAction/2',
+				login : '/mht2html2txt/TransferController/jumpToAction/1'
+			},
+			nowTime : '',
+			dataForm : {
+				mailbox : '',
+				password : '',
+				preparePassword : '',
+				nickname : '',
+			},
+		},
+		methods : {
+			submitReg(){
+				//mailbox of exp
+			    var mailExp = /\w+([-+.']\w+)*@\w+([-.]w+)*\.\w+([-.]\w+)*/;
+			    var mailboxExp = new RegExp(mailExp);
+			    
+			    var space=' ';
+			    
+			    if (this.dataForm.password==null||this.dataForm.mailbox==null||this.dataForm.preparePassword==null||this.dataForm.nickname==null) {
+			    	layer.alert('资料信息未填完!',{icon: 6})
+			    	return false;
+				} else if (this.dataForm.password==''||this.dataForm.mailbox==''||this.dataForm.preparePassword==''||this.dataForm.nickname=='') {
+					layer.alert('资料信息未填完!',{icon: 3})
+		            return false;
+		        } else if (mailboxExp.test(this.dataForm.mailbox) == false) {
+		        	layer.alert('请输入正确的邮箱地址',{icon: 3})
+			    	return false;
+			    } else if (this.dataForm.nickname.indexOf(space)!=-1) {
+			    	layer.alert('昵称请不要带有空格',{icon: 3})
+			    	return false;
+			    } else if (this.dataForm.preparePassword.indexOf(space)!=-1) {
+			    	layer.alert('密码请不要带有空格',{icon: 3})
+			    	return false;
+			    } else if (this.dataForm.password.indexOf(space)!=-1) {
+			    	layer.alert('确认密码请不要带有空格',{icon: 3})
+			    	return false;
+			    } else if (this.dataForm.mailbox.indexOf(space)!=-1) {
+			    	layer.alert('邮箱请不要带有空格',{icon: 3})
+			    	return false;
+			    } else if (this.dataForm.password !== this.dataForm.preparePassword) {
+			    	layer.alert('两次输入的密码相异',{icon: 3})
+			    	return false;
+			    }
+			    
+			    console.info(this.dataForm);
+			    
+			    var formData = new FormData();
+			    formData.append('mailbox',this.dataForm.mailbox);
+			    formData.append('password',this.dataForm.password);
+			    formData.append('nickname',this.dataForm.nickname);
+			    console.log(formData.get('password')+", "+formData.get('mailbox')+", "+formData.get('nickname'));
+			    
+			    axios({
+                   	url: '/mht2html2txt/AccountController/regAccountAction',
+                   	method: "post",
+                   	params: {
+                       	parameter00: 'test param00',
+                       	parameter01: 'test param01',
+                       	mailbox: this.dataForm.mailbox,
+                   	},
+                   	headers: {
+                       	'head_message': 'nothing',
+                       	'Content-Type': 'application/json;charset=UTF-8',
+                   	},
+                   	transformRequest: [
+                       	function(data) {
+                       			return JSON.stringify(data); 
+                       		}
+                   		],
+                   		data: this.dataForm,
+                	})
+                   .then(function (response) {
+                     console.log(response);
+                     if (response.data.status==200) {
+						if (response.data.data!=null) {
+							layer.alert('注册成功!', {
+				                 skin: 'layui-layer-molv', //样式类名  自定义样式
+				                 closeBtn: 1,// 是否显示关闭按钮
+				                 anim: 1,//动画类型
+				                 btn: ['前往登录'],//按钮
+				                 icon: 6,// icon
+				                 yes:function(){
+				                       location.href = '/mht2html2txt/TransferController/jumpToAction/1';
+				                    },
+				                });
+						}
+					} else {
+						layer.alert(response.data.message,{icon:3});
+					}
+                   })
+                   .catch(function (error) {
+                     console.log(error);
+                   });
+			},
+			getFormatTime : function() {
+				var date = new Date();
+				// 年月日
+				var gener = date.getFullYear();
+				gener += '-';
+				gener += (date.getMonth() + 1);
+				gener += '-';
+				gener += date.getDate();
+				// 时分秒
+				gener += ' ';
+				gener += date.getHours() + ':';
+				gener += date.getMinutes() + ':';
+				gener += date.getSeconds();
+				this.nowTime = gener;
+			},
+		},
+		mounted : function() {
+			console.log(this);
+			this.getFormatTime();
+		}
+	})
+</script>
+<style type="text/css" scoped>
+#my-nav1 {
+	float: right;
+}
+
+.div_reg {
+	width: 35%;
+}
+
+.sub_input {
+	height: 35px;
+}
+
+#login-header {
+	width: 35%;
+}
+
+input, form {
+	font-size: 23px;
+}
+
+.control-group {
+	margin: 12px 0;
+}
+
+#buttons_c {
+	transform: translate(-16%, 10px);
+}
+
+.main_sub {
+	transform: translate(34%, 10%);
+}
+
+#header_as_0 {
+	padding: 0px;
+	width: 100%;
+}
+
+.ctrl {
+	position: fixed;
+	width: 100%;
+}
+</style>
