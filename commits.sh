@@ -1,11 +1,11 @@
 #git init
 
-git config user.email "duernna@163.com"
-git config user.name  "AllStarGH"
+#git config user.email "duernna@163.com"
+#git config user.name  "AllStarGH"
 
 #origin:远端仓库的名字
 #git remote add origin https://gitee.com/yuanjingpeng/mht2html2txt.git
-git remote add origin https://github.com/AllStarGH/mht2html2txt.git
+#git remote add origin https://github.com/AllStarGH/mht2html2txt.git
 
 git status
 
