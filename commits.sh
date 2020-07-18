@@ -10,7 +10,7 @@ git status
 
 git add .  
 
-git commit -m "it solves the problem of disorderly code in reading and writing Chinese characters"
+git commit -m "almost done..."
 
 #如果第一次提交报错:更新被拒绝,因为您当前分支的最新提交落后于其对应的远程分支
 #可以再试一次,也是下面这句话
